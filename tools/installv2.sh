@@ -6,11 +6,17 @@
 #or via fetch:  
 #    sh -c "$(fetch -o - "https://raw.githubusercontent.com/sky-fire-785/Project-Aphrodite/refs/heads/Main-PC/tools/installv2.sh")"
 #
+#
+#Do not run this by downloading it if used with konsole. there is a bug that needs to be fixed. if ran in kinsole use the link above with wget or curl. if you have any issues please report them to the github page.
+#
 # You can install the sorce code by runing: 
 # wget "https://raw.githubusercontent.com/sky-fire-785/Project-Aphrodite/refs/heads/Main-PC/tools/installv2.sh" ; sh install.sh
 #
+#
 #this project is made for arch linux on KDE plasma6
-
+#last updated: 3/29/2026
+#
+#
 #sets some varables
 RED='\033[38;2;255;0;0m'
 GREEN='\033[32m'
@@ -83,14 +89,16 @@ esac
 done
 
 while true; do
-echo -e "${YELLOW}reboot needed for full functionality.${NC}"
-read -p "Would you like to reboot? [Y/n]:" choice2
+echo -e "${YELLOW}Reboot needed for full functionality.${NC}"
+read -p "Would you like to Reboot? [Y/n]:" choice2
+choice2=${choice2:-Y}
 
 case "$choice2" in 
   [Yy]* | "" ) 
-    echo "rebooting now"
+    echo "Rebooting Now"
+    echo "Goodbye!"
     sudo reboot now
-    brake
+    break
     ;;
   [Nn]* ) 
     # This triggers if they type N, n, No, or no
