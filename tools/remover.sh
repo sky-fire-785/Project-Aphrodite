@@ -14,6 +14,7 @@ rm -rf ~/.config/kitty
 #removes fastfetch config
 rm -rf ~/.config/fastfetch
 
+#more logic needed here to make so if there was preexisting config files it will build from those instead of just deleting them. this is a work in progress and will be added in the future.
 #removes zsh
 rm -rf ~/.oh-my-zsh
 rm -rf ~/.zshrc ~/.p10k.zsh ~/.zcompdump*
@@ -30,10 +31,16 @@ sudo rm -rf /etc/ly
 sudo systemctl disable ly@tty2.service
 sudo systemctl enable sddm.service 
 
+#removes KDE theme
+rm -rf ~/.local/share/icons/Project-Aphrodite-Icons
+rm -rf ~/.local/share/plasma/look-and-feel/Project-Aphrodite
+rm -rf ~/.icons/Project-Aphrodite-Cursor
+rm -rf ~/.local/share/aurorae/themes/fluency
+rm -rf ~/.config/project-aphrodite-REF
+
 #resets the KDE shortcuts to defalts
 rm -f ~/.config/kglobalshortcutsrc
 
-#updates the system
-sudo pacman -Rs ly fastfetch kitty rofi zsh --noconfirm
-yay -Rs visual-studio-code-bin --noconfirm
+#updates the system and removes the packages
+yay -Rs ly fastfetch kitty rofi zsh visual-studio-code-bin --noconfirm
 sudo pacman -Syu --noconfirm
