@@ -121,6 +121,7 @@ if [ -f "~/.config/Project-Aphrodite-REF/ref3" ] && [ -d "~/.local/share/aurorae
     tar -xf ~/.config/Project-Aphrodite-REF/ref3 -C ~/.local/share/icons --keep-newer-files
 
 else
+    echo "Fixing/installing KDE configuration..."
     mkdir -p ~/.config/Project-Aphrodite-REF
     mkdir -p ~/.icons
     mkdir -p ~/.local/share/plasma/look-and-feel
@@ -141,7 +142,7 @@ fi
 
 #updates KDE shortcuts
 echo "Updateing KDE shortcuts..."
-if ! curl -#L -z ~/.local/share/applications/net.local.rofi/desktop -o ~/.local/share/applications/net.local.rofi.desktop "https://raw.githubusercontent.com/sky-fire-785/Project-Aphrodite/refs/heads/Main-PC/rofi/net.local.rofi.desktop" ;then
+if ! curl -#L -z ~/.local/share/applications/net.local.rofi.desktop -o ~/.local/share/applications/net.local.rofi.desktop "https://raw.githubusercontent.com/sky-fire-785/Project-Aphrodite/refs/heads/Main-PC/rofi/net.local.rofi.desktop" ;then
     echo -e "${RED}WARNING: Update Failed for Rofi keybord shortcuts${NC}"
     echo -e "${YELLOW}Trying to fix Rofi Shortcuts...${NC}"
 
