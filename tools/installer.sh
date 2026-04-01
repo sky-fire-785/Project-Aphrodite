@@ -76,10 +76,10 @@ curl -#L -o ~/.config/Project-Aphrodite-REF/ref1 "https://github.com/sky-fire-78
 curl -#L -o ~/.config/Project-Aphrodite-REF/ref2 "https://github.com/sky-fire-785/Project-Aphrodite/raw/c2b99b3346a94b4c56c561154c70484ff23680e8/KDE%20Theme/fluency.tar.xz" || echo -e "${RED}WARNING: Install Failed${NC}"
 curl -#L -o ~/.config/Project-Aphrodite-REF/ref3 "https://github.com/sky-fire-785/Project-Aphrodite/raw/c2b99b3346a94b4c56c561154c70484ff23680e8/KDE%20Theme/Project-Aphrodite-Icons.tar.gz" || echo -e "${RED}WARNING: Install Failed${NC}"
 
-tar -xf ~/.config/Project-Aphrodite-REF/ref0 -C ~/.icons --keep-newer-files
-tar -xf ~/.config/Project-Aphrodite-REF/ref1 -C ~/.local/share/plasma/look-and-feel --keep-newer-files
-tar -xf ~/.config/Project-Aphrodite-REF/ref2 -C ~/.local/share/aurorae/themes --keep-newer-files
-tar -xf ~/.config/Project-Aphrodite-REF/ref3 -C ~/.local/share/icons --keep-newer-files
+tar -xf ~/.config/Project-Aphrodite-REF/ref0 -C ~/.icons &&  rm -rf ~/.config/Project-Aphrodite-REF/ref0 || echo -e "${RED}WARNING: Extration Failed. ${NC}"
+tar -xf ~/.config/Project-Aphrodite-REF/ref1 -C ~/.local/share/plasma/look-and-feel &&  rm -rf ~/.config/Project-Aphrodite-REF/ref1 || echo -e "${RED}WARNING: Extration Failed. ${NC}"
+tar -xf ~/.config/Project-Aphrodite-REF/ref2 -C ~/.local/share/aurorae/themes &&  rm -rf ~/.config/Project-Aphrodite-REF/ref2 || echo -e "${RED}WARNING: Extration Failed. ${NC}"
+tar -xf ~/.config/Project-Aphrodite-REF/ref3 -C ~/.local/share/icons &&  rm -rf ~/.config/Project-Aphrodite-REF/ref3 || echo -e "${RED}WARNING: Extration Failed. ${NC}"
 
 #sets ly's configs
 echo "Seting ly configs..."
