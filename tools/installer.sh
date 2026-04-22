@@ -88,6 +88,7 @@ sudo sed -i 's/^[# \t]*numlock.*/numlock = true/' /etc/ly/config.ini || echo -e 
 sudo sed -i 's/^[# \t]*save.*/save = true/' /etc/ly/config.ini || echo -e "${RED}WARNING: Failed To Update ly${NC}"
 
 #sets defalts 
+kbuildsycoca6 --noincremental # I dont know if this works but i hink it douse ill hve to check
 sudo systemctl disable sddm.service
 sudo systemctl enable ly@tty2.service -f
 chsh -s /usr/bin/zsh
